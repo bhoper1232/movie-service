@@ -1,0 +1,16 @@
+.home-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+.home-header .logo {
+    font-size: 60px;
+    font-weight: bold;
+    color: #c13584;
+    margin: 20px 0;
+}
+
+.home-header p {
+    font-size: 18px;
+    color: #a5a5a5;
+}

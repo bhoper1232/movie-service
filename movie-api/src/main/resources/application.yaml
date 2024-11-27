@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: movie-api
+  data:
+    mongodb:
+      database: ${env.MONGO_DATABASE}
+      uri: mongodb+srv://${env.MONGO_USER}:${env.MONGO_PASSWORD}@${env.MONGO_CLUSTER}
