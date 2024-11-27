@@ -1,5 +1,5 @@
 # MovieService 🎥
-**MovieFlix** is a full-stack web application. It allows users to browse through a collection of movies, view detailed information about each movie, and share their thoughts by leaving reviews.
+**MovieService** is a full-stack web application. It allows users to browse through a collection of movies, view detailed information about each movie, and share their thoughts by leaving reviews.
 
 ## 🛠️ Features
 - **Movie Browsing**:  
