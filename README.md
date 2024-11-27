@@ -54,7 +54,7 @@
 ## 🖼️ Screenshots
 
 ### Homepage:
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/84386bb2-96b1-42b6-9bd8-95bfaa7f848d">
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/75b98d66-bf67-4753-8996-0d3a38533595">
 
 
 ### Movie Details:
