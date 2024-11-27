@@ -41,7 +41,7 @@
 4. **Run the Frontend:**
     - Navigate to the frontend folder:
       ```
-      cd ../frontend
+      cd ../movie-client
       ```
     - Install dependencies and start the React app:
       ```
@@ -54,8 +54,10 @@
 ## 🖼️ Screenshots
 
 ### Homepage:
-<img width="1438" alt="image" src="https://github.com/user-attachments/assets/f762b7c2-8d3a-4ad3-8501-27132ce057a1">
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/84386bb2-96b1-42b6-9bd8-95bfaa7f848d">
+
 
 ### Movie Details:
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/b5ac5438-cfe7-4ed8-a04a-45975a021209">
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/9f7aedae-43fc-4e9f-b3c6-e247f54e6231">
+
 
