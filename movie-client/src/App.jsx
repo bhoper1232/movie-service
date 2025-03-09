@@ -1,11 +1,12 @@
 import api from "./api/axiosConfig"
 import "./App.css";
-import React, {useState, useEffect} from "react"
+import {useState, useEffect} from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./components/home/Home.jsx";
 import Trailer from "./components/trailer/Trailer.jsx";
 import MovieDetails from "./components/movieDetails/MovieDetails.jsx";
+import Login from "./components/security/Login.jsx";
 
 function App() {
 
@@ -15,7 +16,14 @@ function App() {
 
   const getMovies = async () => {
     try {
-      const response = await api.get("/api/v1/movies");
+      const token = localStorage.getItem("token")
+      const response = await api.get("/api/v1/movies", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        }
+      });
 
       setMovies(response.data);
     } catch (error) {
@@ -25,8 +33,14 @@ function App() {
 
   const getMovieData = async (imdbId) => {
     try {
-      
-      const response = await api.get(`api/v1/movies/${imdbId}`);
+      const token = localStorage.getItem("token")
+      const response = await api.get(`api/v1/movies/${imdbId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        }
+      });
 
       const singleMovie = response.data;
 
@@ -35,7 +49,7 @@ function App() {
       setReviews(singleMovie.reviewIds);
 
     } catch (error) {
-      
+      console.log(error);
     }
   }
 
@@ -59,15 +73,19 @@ function App() {
         {
           path: "/details/:imdbId",
           element: <MovieDetails getMovieData={getMovieData} movie={movie} reviews={reviews} setReviews={setReviews} />
-        }
+        }, {
+          path: "/login",
+          element: <Login />
+        },
       ],
     },
-  ]);
+  ], {future: {v7_relativeSplatPath: true, v7_fetcherPersist: true, v7_normalizeFormMethod: true, v7_partialHydration: true,
+    v7_skipActionErrorRevalidation: true}});
 
   return (
     <>
       <div className="App">
-        <RouterProvider router={router} />
+        <RouterProvider router={router} future={{v7_startTransition: true}} />
       </div>
     </>
   )

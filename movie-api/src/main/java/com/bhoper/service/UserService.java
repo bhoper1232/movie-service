@@ -58,6 +58,10 @@ public class UserService {
         throw new UsernameNotFoundException("User not found " + login);
     }
 
+    public boolean isValidToken(String token) {
+        return this.jwtUtil.isValidToken(token);
+    }
+
     private boolean isEmail(String input) {
         return EmailValidator.getInstance().isValid(input);
     }
