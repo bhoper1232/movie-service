@@ -1,8 +1,8 @@
 package com.bhoper.service;
 
-import com.bhoper.model.Movie;
-import com.bhoper.model.Review;
-import com.bhoper.repository.ReviewRepository;
+import com.bhoper.persistance.domain.movies.Movie;
+import com.bhoper.persistance.domain.reviews.Review;
+import com.bhoper.persistance.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

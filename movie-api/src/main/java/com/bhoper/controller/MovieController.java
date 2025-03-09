@@ -1,6 +1,6 @@
 package com.bhoper.controller;
 
-import com.bhoper.model.Movie;
+import com.bhoper.persistance.domain.movies.Movie;
 import com.bhoper.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/movies")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
 public class MovieController {
 
     private final MovieService movieService;
