@@ -1,9 +1,8 @@
 package com.bhoper.service;
 
-import com.bhoper.model.Movie;
-import com.bhoper.repository.MovieRepository;
+import com.bhoper.persistance.domain.movies.Movie;
+import com.bhoper.persistance.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

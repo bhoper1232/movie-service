@@ -1,6 +1,6 @@
 package com.bhoper.controller;
 
-import com.bhoper.model.Review;
+import com.bhoper.persistance.domain.reviews.Review;
 import com.bhoper.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1/reviews")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173")
 public class ReviewController {
 
     private final ReviewService reviewService;
