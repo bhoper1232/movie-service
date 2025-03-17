@@ -23,6 +23,7 @@ function Hero({movies}) {
                     placeholder="Search movies..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
+                    className=""
                 />
                 <button className="search-btn">Search</button>
             </div>

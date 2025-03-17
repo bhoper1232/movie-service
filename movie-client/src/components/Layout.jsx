@@ -43,6 +43,7 @@ function Layout() {
     return(
         <>
             <main>
+                {/*<Avatar />*/}
                 <Outlet />
             </main>
         </>

@@ -13,10 +13,21 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [movie, setMovie] = useState(null);
   const [reviews, setReviews] = useState();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+      getMovies()
+    }
+  }, [])
 
   const getMovies = async () => {
     try {
       const token = localStorage.getItem("token")
+      if (!token) return;
+
       const response = await api.get("/api/v1/movies", {
         method: "GET",
         headers: {
@@ -34,6 +45,8 @@ function App() {
   const getMovieData = async (imdbId) => {
     try {
       const token = localStorage.getItem("token")
+      if (!token) return;
+
       const response = await api.get(`api/v1/movies/${imdbId}`, {
         method: "GET",
         headers: {
@@ -53,9 +66,14 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    getMovies();
-  }, []);
+  const handleLoginSuccess = () => {
+    setIsAuthenticated(true);
+    getMovies()
+  }
+
+  // useEffect(() => {
+  //   getMovies();
+  // }, []);
 
   const router = createBrowserRouter([
     {
@@ -75,7 +93,7 @@ function App() {
           element: <MovieDetails getMovieData={getMovieData} movie={movie} reviews={reviews} setReviews={setReviews} />
         }, {
           path: "/login",
-          element: <Login />
+          element: <Login handleLoginSuccess={handleLoginSuccess} />
         },
       ],
     },
